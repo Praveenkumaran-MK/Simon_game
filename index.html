@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>It's Play Time</title>
+    <link rel="icon" href="./game.png" />
+  </head>
+  <body>
+    <style>
+      body {
+        background-color: black;
+        color: crimson;
+        font-family: fantasy;
+      }
+      .box {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        height: 50%;
+        width: 50%;
+      }
+
+      .ibox {
+        display: block;
+        height: 40vh;
+        width: 25vw;
+        border: 1em solid transparent;
+        position: relative;
+      }
+
+      .ibox::before {
+        content: "";
+        position: absolute;
+        top: -1em;
+        left: -1em;
+        right: -1em;
+        bottom: -1em;
+        border: 9px solid;
+        filter: brightness(200%);
+        filter: blur(13px);
+        /*    animation: glow-blue 5s infinite linear; */
+      }
+
+      #ibox1::before {
+        animation: glow-blue 5s infinite linear;
+      }
+
+      @keyframes glow-blue {
+        0% {
+          border-image: conic-gradient(from 0deg, navy, blue, cyan, skyblue) 1;
+        }
+        50% {
+          border-image: conic-gradient(from 180deg, navy, blue, cyan, skyblue) 1;
+        }
+        100% {
+          border-image: conic-gradient(from 360deg, navy, blue, cyan, skyblue) 1;
+        }
+      }
+
+      #ibox2::before {
+        animation: glow-red 5s infinite linear;
+      }
+
+      @keyframes glow-red {
+        0% {
+          border-image: conic-gradient(from 0deg, darkred, crimson, orange, red)
+            1;
+        }
+        50% {
+          border-image: conic-gradient(
+              from 180deg,
+              darkred,
+              crimson,
+              orange,
+              red
+            )
+            1;
+        }
+        100% {
+          border-image: conic-gradient(
+              from 360deg,
+              darkred,
+              crimson,
+              orange,
+              red
+            )
+            1;
+        }
+      }
+
+      #ibox3::before {
+        animation: glow-green 5s infinite linear;
+      }
+
+      @keyframes glow-green {
+        0% {
+          border-image: conic-gradient(
+              from 0deg,
+              darkgreen,
+              limegreen,
+              yellowgreen,
+              lightgreen
+            )
+            1;
+        }
+        50% {
+          border-image: conic-gradient(
+              from 180deg,
+              darkgreen,
+              limegreen,
+              yellowgreen,
+              lightgreen
+            )
+            1;
+        }
+        100% {
+          border-image: conic-gradient(
+              from 360deg,
+              darkgreen,
+              limegreen,
+              yellowgreen,
+              lightgreen
+            )
+            1;
+        }
+      }
+
+      #ibox4::before {
+        animation: glow-yellow 5s infinite linear;
+      }
+
+      @keyframes glow-yellow {
+        0% {
+          border-image: conic-gradient(
+              from 0deg,
+              gold,
+              yellow,
+              lightyellow,
+              orange
+            )
+            1;
+        }
+        50% {
+          border-image: conic-gradient(
+              from 180deg,
+              gold,
+              yellow,
+              lightyellow,
+              orange
+            )
+            1;
+        }
+        100% {
+          border-image: conic-gradient(
+              from 360deg,
+              gold,
+              yellow,
+              lightyellow,
+              orange
+            )
+            1;
+        }
+      }
+    </style>
+    <center><h1>SIMON GAME</h1></center>
+    <center>
+      <div class="box">
+        <div class="ibox" id="ibox1" style="background-color: blue"></div>
+        <div id="ibox2" class="ibox" style="background-color: red"></div>
+        <div id="ibox3" class="ibox" style="background-color: green"></div>
+        <div id="ibox4" class="ibox" style="background-color: yellow"></div>
+      </div>
+    </center>
+    <br />
+    <a
+      href="https://www.google.com/search?q=simon+game+instructions&oq=simon+game+instr&gs_lcrp=EgZjaHJvbWUqBwgBECEYjwIyBggAEEUYOTIHCAEQIRiPAjIHCAIQIRiPAjIHCAMQIRiPAtIBCDg0MjJqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8"
+      style="color: cyan; text-decoration: none"
+      >Know more?</a
+    >
+    <center>
+      <button onclick="oodu()" style="background-color: crimson">start</button>
+    </center>
+    <h1 id="res" style="display: inline"><b>result</b></h1>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
